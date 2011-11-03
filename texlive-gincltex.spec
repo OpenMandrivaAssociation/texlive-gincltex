@@ -1,3 +1,9 @@
+# revision 23835
+# category Package
+# catalog-ctan /macros/latex/contrib/gincltex
+# catalog-date 2011-09-05 20:39:25 +0200
+# catalog-license lppl1.3
+# catalog-version 0.3
 Name:		texlive-gincltex
 Version:	0.3
 Release:	1
@@ -49,6 +55,7 @@ pacakge for other output formats.
 #- source
 %doc %{_texmfdistdir}/source/latex/gincltex/gincltex.dtx
 %doc %{_texmfdistdir}/source/latex/gincltex/gincltex.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -59,3 +66,5 @@ pacakge for other output formats.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
