@@ -6,7 +6,7 @@
 # catalog-version 0.3
 Name:		texlive-gincltex
 Version:	0.3
-Release:	5
+Release:	6
 Summary:	Include TeX files as graphics (.tex support for \includegraphics)
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/gincltex
