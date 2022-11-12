@@ -1,19 +1,13 @@
-# revision 23835
-# category Package
-# catalog-ctan /macros/latex/contrib/gincltex
-# catalog-date 2011-09-05 20:39:25 +0200
-# catalog-license lppl1.3
-# catalog-version 0.3
 Name:		texlive-gincltex
-Version:	0.3
-Release:	11
+Version:	64967
+Release:	1
 Summary:	Include TeX files as graphics (.tex support for \includegraphics)
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/gincltex
 License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gincltex.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gincltex.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gincltex.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gincltex.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gincltex.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gincltex.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -30,12 +24,12 @@ package which includes native pdflatex support and uses the pdf
 pacakge for other output formats.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -48,24 +42,11 @@ pacakge for other output formats.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.3-2
-+ Revision: 752315
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.3-1
-+ Revision: 718556
-- texlive-gincltex
-- texlive-gincltex
-- texlive-gincltex
-- texlive-gincltex
-
