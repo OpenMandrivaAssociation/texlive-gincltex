@@ -3,7 +3,7 @@ Version:	64967
 Release:	2
 Summary:	Include TeX files as graphics (.tex support for \includegraphics)
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/gincltex
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/gincltex
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gincltex.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gincltex.doc.r%{version}.tar.xz
